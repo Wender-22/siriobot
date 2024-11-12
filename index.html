@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini App Telegram</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    /* Stili di base */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    /* Contenitore principale */
+    .container {
+      max-width: 500px;
+      width: 100%;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    /* Titolo */
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #007bff;
+    }
+
+    /* Pulsante */
+    button {
+      padding: 12px 24px;
+      font-size: 18px;
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Responsive per schermi più grandi */
+    @media (min-width: 768px) {
+      .container {
+        max-width: 600px;
+      }
+      h1 {
+        font-size: 28px;
+      }
+      button {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Benvenuto nella Mini App!</h1>
+    <p>Questa è una demo della Mini App di Telegram. Usa il pulsante qui sotto per inviare dati al bot.</p>
+    <button onclick="sendData()">Invia Messaggio al Bot</button>
+  </div>
+
+  <script>
+    function sendData() {
+      // Invia un messaggio al bot
+      Telegram.WebApp.sendData("Messaggio inviato dalla Mini App!");
+    }
+    Telegram.WebApp.ready(); // Notifica a Telegram che l'app è pronta
+  </script>
+</body>
+</html>
